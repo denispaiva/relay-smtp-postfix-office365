@@ -34,12 +34,12 @@ Example
 Launch Postfix container:
   
     $ docker run -d -h docker01.hpcmc.local --name="dockermailrelay" \
-		-e SMTP_LOGIN="relay@my-tenant-office365.onmicrosoft.com" \
-		-e SMTP_PASSWORD="30#cc+/XEKcf" \
-		-e EXT_RELAY_HOST="smtp.office365.com" \
-		-e EXT_RELAY_PORT="587" \
-		-e ACCEPTED_NETWORKS="10.21.92.72" \
-		-p 25:25 denispaiva/relay-smtp-postfix-office365
+    	-e SMTP_LOGIN="relay@my-tenant-office365.onmicrosoft.com" \
+	-e SMTP_PASSWORD="30#cc+/XEKcf" \
+	-e EXT_RELAY_HOST="smtp.office365.com" \
+	-e EXT_RELAY_PORT="587" \
+	-e ACCEPTED_NETWORKS="10.21.92.72" \
+	-p 25:25 denispaiva/relay-smtp-postfix-office365
 
 License
 -------
