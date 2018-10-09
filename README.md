@@ -32,9 +32,7 @@ Example
 -------
 
 Launch Postfix container:
-
-    $ docker run -d -h my-host-relay.example.com --name="my-host-relay" -e SMTP_LOGIN=username-for-relay-office365 -e SMTP_PASSWORD=password-office365 -p 25:25 denispaiva/relay-smtp-postfix-office365
-    
+  
     $ docker run -d -h docker01.hpcmc.local --name="dockermailrelay" \
 		-e SMTP_LOGIN="relay@my-tenant-office365.onmicrosoft.com" \
 		-e SMTP_PASSWORD="30#cc+/XEKcf" \
