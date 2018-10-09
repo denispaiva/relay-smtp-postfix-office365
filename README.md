@@ -25,7 +25,7 @@ Variables
 * `EXT_RELAY_PORT=587`: External relay TCP port
 * `SMTP_LOGIN=`: Login to connect to the external relay (required, otherwise the container fails to start)
 * `SMTP_PASSWORD=`: Password to connect to the external relay (required, otherwise the container fails to start)
-* `USE_TLS=`: Remote require tls. Might be "yes" or "no". Default: no.
+* `USE_TLS=`: Remote require tls. Might be "yes" or "no". Default: yes.
 * `TLS_VERIFY=`: Trust level for checking the remote side cert. (none, may, encrypt, dane, dane-only, fingerprint, verify, secure). Default: may.
 
 Example
@@ -34,4 +34,15 @@ Example
 Launch Postfix container:
 
     $ docker run -d -h my-host-relay.example.com --name="my-host-relay" -e SMTP_LOGIN=username-for-relay-office365 -e SMTP_PASSWORD=password-office365 -p 25:25 denispaiva/relay-smtp-postfix-office365
+    
+    $ docker run -d -h docker01.hpcmc.local --name="dockermailrelay" \
+		-e SMTP_LOGIN="relay@my-tenant-office365.onmicrosoft.com" \
+		-e SMTP_PASSWORD="30#cc+/XEKcf" \
+		-e EXT_RELAY_HOST="smtp.office365.com" \
+		-e EXT_RELAY_PORT="587" \
+		-e ACCEPTED_NETWORKS="10.21.92.72" \
+		-p 25:25 denispaiva/relay-smtp-postfix-office365
 
+License
+-------
+"relay-smtp-postfix-office365" is licensed under the MIT license. See LICENSE for the full license text.
