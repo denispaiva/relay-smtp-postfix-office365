@@ -3,7 +3,7 @@ MAINTAINER Denis Paiva <denispaiva@gmail.com>
 # CREDITS Uri Savelchev <alterrebe@gmail.com>
 
 # Packages: update
-RUN apk -U add postfix ca-certificates libsasl py-pip supervisor rsyslog
+RUN apk -U add postfix ca-certificates libsasl cyrus-sasl-login cyrus-sasl-plain py-pip supervisor rsyslog
 RUN pip install j2cli
 
 # Add files
@@ -13,6 +13,7 @@ RUN mkfifo /var/spool/postfix/public/pickup \
 
 # Configure: supervisor
 ADD bin/dfg.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/dfg.sh
 ADD conf/supervisor-all.ini /etc/supervisor.d/
 
 # Runner
