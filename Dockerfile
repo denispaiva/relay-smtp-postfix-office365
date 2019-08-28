@@ -3,7 +3,7 @@ MAINTAINER Denis Paiva <denispaiva@gmail.com>
 # CREDITS Uri Savelchev <alterrebe@gmail.com>
 
 # Packages: update
-RUN apk -U add postfix ca-certificates libsasl cyrus-sasl-login cyrus-sasl-plainpy-pip supervisor rsyslog
+RUN apk -U add postfix ca-certificates libsasl cyrus-sasl-login cyrus-sasl-plain py-pip supervisor rsyslog
 RUN pip install j2cli
 
 # Add files
